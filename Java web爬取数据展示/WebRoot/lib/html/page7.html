@@ -1,0 +1,1861 @@
+<!DOCTYPE html>
+<html data-theme="light">
+ <head>
+  <meta charset="utf-8"/>
+  <script type="text/javascript">
+   (window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"25c6cbfd04",applicationID:"162207108"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(10),c=t(11),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(12);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],7:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?p("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&p("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(f&&f<r.startTime)return;p("lcp",[r])}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||p("cls",[t])})}function a(t){if(t instanceof g&&!y){var e=Math.round(t.timeStamp),n={type:t.type};e<=l.now()?n.fid=l.now()-e:e>l.offset&&e<=Date.now()?(e-=l.offset,n.fid=l.now()-e):e=l.now(),y=!0,p("timing",["fi",e,n])}}function c(t){"hidden"===t&&(f=l.now(),p("pageHide",[f]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d,p=t("handle"),l=t("loader"),v=t(9),m=t(3),g=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){u=new PerformanceObserver(r);try{u.observe({entryTypes:["paint"]})}catch(h){}s=new PerformanceObserver(i);try{s.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}d=new PerformanceObserver(o);try{d.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var y=!1,w=["click","keydown","mousedown","pointerdown","touchstart"];w.forEach(function(t){document.addEventListener(t,a,m(!1))})}v(c)}},{}],8:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],9:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],10:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],11:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],12:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){y[t]=m(t).concat(e)}function v(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:h,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(10),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!T++){var t=P.info=NREUM.info,e=g.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(O,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+P.offset],null,"api"),c("timing",["load",n]);var r=g.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=v+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===g.readyState&&o()}function o(){c("mark",["domContent",a()+P.offset],null,"api")}var a=t(5),c=t("handle"),f=t(10),u=t("ee"),s=t(8),d=t(6),p=t(2),l=t(3),v=p.getConfiguration("ssl")===!1?"http":"https",m=window,g=m.document,h="addEventListener",y="attachEvent",w=m.XMLHttpRequest,b=w&&w.prototype,E=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:w,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,O={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1212.min.js"},M=w&&b&&b[h]&&!/CriOS/.test(navigator.userAgent),P=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:M,userAgent:s,disabled:E};if(!E){t(1),t(7),g[h]?(g[h]("DOMContentLoaded",o,l(!1)),m[h]("load",r,l(!1))):(g[y]("onreadystatechange",i),m[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var T=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(11),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);
+  </script>
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" name="viewport"/>
+  <title>
+   朽木冰天看过的动画
+  </title>
+  <meta content="朽木冰天看过的动画,ACG,anime,comic,game,music,动漫,音乐,游戏,动画,漫画,番组,bangumi,chii,chobits" name="keywords">
+   <meta content="朽木冰天看过的动画" name="description"/>
+   <link href="https://bangumi.tv/static/xml/opensearch_bgm.xml" rel="search" title="Bangumi 番组计划" type="application/opensearchdescription+xml"/>
+   <link href="https://bangumi.tv/img/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+   <link href="https://bangumi.tv/img/ico/ico_ios.png" rel="apple-touch-icon-precomposed"/>
+   <!--[if lte IE 6]>
+<script src="/js/pngfixed.js" type="text/javascript"></script>
+<script>
+  DD_belatedPNG.fix('.png_bg,img,#wrapper');
+</script>
+<![endif]-->
+   <link href="https://bangumi.tv/min/g=css?r336" rel="stylesheet" type="text/css"/>
+   <script type="text/javascript">
+    var SHOW_ROBOT = '0', CHOBITS_UID = 0, SITE_URL = 'https://bangumi.tv', CHOBITS_VER = 'r336';
+   </script>
+  </meta>
+ </head>
+ <body class="bangumi">
+  <div class="wrapperNeue" id="wrapperNeue">
+   <div id="headerNeue2">
+    <div class="headerNeueInner clearit">
+     <div class="bg musume_2">
+     </div>
+     <a class="logo" href="https://bangumi.tv/">
+      Bangumi 番组计划
+     </a>
+     <input id="navMenuNeueToggle" type="checkbox"/>
+     <label class="menuCompact" for="navMenuNeueToggle">
+     </label>
+     <div id="navNeue2">
+      <div id="menuNeue">
+       <ul class="clearit" id="navMenuNeue">
+        <li>
+         <a class="top chl anime" href="https://bangumi.tv/anime">
+          <span>
+           动画
+          </span>
+         </a>
+         <div class="clear">
+         </div>
+         <ul class="clearit">
+          <li>
+           <a class="nav" href="https://bangumi.tv/anime/chart">
+            排行榜
+           </a>
+          </li>
+          <li>
+           <a class="nav" href="https://bangumi.tv/calendar">
+            每日放送
+           </a>
+          </li>
+          <li>
+           <a class="nav" href="https://bangumi.tv/anime/tag">
+            动画标签
+           </a>
+          </li>
+          <li>
+           <a class="nav" href="https://bangumi.tv/anime/browser">
+            分类浏览
+           </a>
+          </li>
+          <li>
+           <a class="nav" href="https://bangumi.tv/anime/blog">
+            动画日志
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li>
+         <a class="top chl" href="https://bangumi.tv/book">
+          <span>
+           书籍
+          </span>
+         </a>
+         <div class="clear">
+         </div>
+         <ul class="clearit">
+          <li>
+           <a class="nav" href="https://bangumi.tv/book/chart">
+            排行榜
+           </a>
+          </li>
+          <li>
+           <a class="nav" href="https://bangumi.tv/book/tag">
+            图书标签
+           </a>
+          </li>
+          <li>
+           <a class="nav" href="https://bangumi.tv/book/browser">
+            分类浏览
+           </a>
+          </li>
+          <li>
+           <a class="nav" href="https://bangumi.tv/book/blog">
+            图书日志
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li>
+         <a class="top chl" href="https://bangumi.tv/music">
+          <span>
+           音乐
+          </span>
+         </a>
+         <div class="clear">
+         </div>
+         <ul class="clearit">
+          <li>
+           <a class="nav" href="https://bangumi.tv/music/chart">
+            排行榜
+           </a>
+          </li>
+          <li>
+           <a class="nav" href="https://bangumi.tv/music/tag">
+            音乐标签
+           </a>
+          </li>
+          <li>
+           <a class="nav" href="https://bangumi.tv/music/browser">
+            浏览全部
+           </a>
+          </li>
+          <li>
+           <a class="nav" href="https://bangumi.tv/music/blog">
+            音乐日志
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li>
+         <a class="top chl" href="https://bangumi.tv/game">
+          <span>
+           游戏
+          </span>
+         </a>
+         <div class="clear">
+         </div>
+         <ul class="clearit">
+          <li>
+           <a class="nav" href="https://bangumi.tv/game/chart">
+            排行榜
+           </a>
+          </li>
+          <li>
+           <a class="nav" href="https://bangumi.tv/game/tag">
+            游戏标签
+           </a>
+          </li>
+          <li>
+           <a class="nav" href="https://bangumi.tv/game/browser">
+            平台浏览
+           </a>
+          </li>
+          <li>
+           <a class="nav" href="https://bangumi.tv/game/blog">
+            游戏日志
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li>
+         <a class="top chl real" href="https://bangumi.tv/real">
+          <span>
+           三次元
+          </span>
+         </a>
+         <div class="clear">
+         </div>
+         <ul class="clearit">
+          <li>
+           <a class="nav" href="https://bangumi.tv/real/chart">
+            排行榜
+           </a>
+          </li>
+          <li>
+           <a class="nav" href="https://bangumi.tv/real/tag">
+            三次元标签
+           </a>
+          </li>
+          <li>
+           <a class="nav" href="https://bangumi.tv/real/blog">
+            三次元日志
+           </a>
+          </li>
+          <li>
+           <a class="nav" href="https://bangumi.tv/real/browser/platform/jp">
+            日剧
+           </a>
+          </li>
+          <li>
+           <a class="nav" href="https://bangumi.tv/real/browser/platform/en">
+            欧美剧
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li>
+         <a class="top" href="https://bangumi.tv/mono">
+          <span>
+           人物
+          </span>
+         </a>
+         <div class="clear">
+         </div>
+         <ul class="clearit">
+          <li>
+           <a class="nav" href="https://bangumi.tv/character">
+            虚构人物
+           </a>
+          </li>
+          <li>
+           <a class="nav" href="https://bangumi.tv/person">
+            现实人物
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li>
+         <a class="top_lite" href="https://bangumi.tv/rakuen">
+          <span>
+           超展开
+          </span>
+         </a>
+        </li>
+        <li>
+         <a class="top" href="https://bangumi.tv/group">
+          <span>
+           小组
+          </span>
+         </a>
+         <div class="clear">
+         </div>
+         <ul class="clearit">
+          <li>
+           <a class="nav" href="https://bangumi.tv/group/discover">
+            随便看看
+           </a>
+          </li>
+          <li>
+           <a class="nav" href="https://bangumi.tv/group/all">
+            所有小组
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li>
+         <a class="top" href="javascript:void(0);">
+          <span>
+           探索
+          </span>
+         </a>
+         <div class="clear">
+         </div>
+         <ul class="explore clearit">
+          <li class="single">
+           <a href="https://bangumi.tv/timeline">
+            时空管理局
+           </a>
+          </li>
+          <li class="group">
+           <span>
+            <a href="https://bangumi.tv/blog">
+             日志
+            </a>
+            <a href="https://bangumi.tv/index">
+             目录
+            </a>
+            <a href="https://bangumi.tv/wiki">
+             维基人
+            </a>
+           </span>
+          </li>
+          <li class="group">
+           <span>
+            <a href="https://bangumi.tv/magi">
+             MAGI 问答
+            </a>
+            <a href="https://bangumi.tv/dollars">
+             Dollars
+            </a>
+           </span>
+          </li>
+          <li class="group">
+           <span class="root">
+            客户端
+           </span>
+           <span>
+            <a href="https://bangumi.tv/onair">
+             onAir
+            </a>
+            <a href="https://bangumi.tv/group/topic/5155">
+             Mobile
+            </a>
+           </span>
+          </li>
+         </ul>
+        </li>
+        <li class="doujin">
+         <a href="http://doujin.bangumi.tv">
+          天窗联盟
+         </a>
+        </li>
+       </ul>
+      </div>
+     </div>
+     <div class="idBadgerNeue">
+      <div class="guest">
+       <a class="guest login" href="https://bangumi.tv/login">
+        登录
+       </a>
+       <a class="guest signup" href="https://bangumi.tv/signup">
+        注册
+       </a>
+      </div>
+     </div>
+     <div id="headerSearchWrapper">
+      <div id="headerSearch">
+       <form action="https://bangumi.tv/subject_search" method="post">
+        <div class="inner">
+         <select id="siteSearchSelect" name="cat">
+          <option value="all">
+           全部
+          </option>
+          <option value="2">
+           动画
+          </option>
+          <option value="1">
+           书籍
+          </option>
+          <option value="4">
+           游戏
+          </option>
+          <option value="3">
+           音乐
+          </option>
+          <option value="6">
+           三次元
+          </option>
+          <option value="person">
+           人物
+          </option>
+         </select>
+         <input class="textfield" id="search_text" name="search_text" type="text"/>
+         <input class="search" name="submit" type="submit" value="搜索"/>
+        </div>
+       </form>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="png_bg" id="main">
+   </div>
+   <div class="clearit" id="headerProfile">
+    <div class="subjectNav">
+     <div class="headerContainer">
+      <h1 class="nameSingle">
+       <div class="rr">
+       </div>
+       <div class="headerAvatar">
+        <a class="avatar" href="https://bangumi.tv/user/430090">
+         <span class="avatarNeue avatarSize75" style="background-image:url('https://lain.bgm.tv/pic/user/l/000/43/00/430090.jpg?r=1557198790')">
+         </span>
+        </a>
+       </div>
+       <div class="inner">
+        <a href="https://bangumi.tv/user/430090">
+         朽木冰天
+        </a>
+        <small class="grey">
+         @430090
+        </small>
+        <span id="friend_flag">
+        </span>
+       </div>
+      </h1>
+     </div>
+     <div class="navTabsWrapper">
+      <ul class="navTabs">
+       <li>
+        <a href="https://bangumi.tv/user/430090">
+         时光机
+        </a>
+       </li>
+       <li>
+        <a class="focus" href="https://bangumi.tv/anime/list/430090">
+         收藏
+        </a>
+       </li>
+       <li>
+        <a href="https://bangumi.tv/user/430090/mono">
+         人物
+        </a>
+       </li>
+       <li>
+        <a href="https://bangumi.tv/user/430090/blog">
+         日志
+        </a>
+       </li>
+       <li>
+        <a href="https://bangumi.tv/user/430090/index">
+         目录
+        </a>
+       </li>
+       <li>
+        <a href="https://bangumi.tv/user/430090/timeline">
+         时间胶囊
+        </a>
+       </li>
+       <li>
+        <a href="https://bangumi.tv/user/430090/groups">
+         小组
+        </a>
+       </li>
+       <li>
+        <a href="https://bangumi.tv/user/430090/friends">
+         好友
+        </a>
+       </li>
+       <li>
+        <a href="https://bangumi.tv/user/430090/wiki">
+         维基
+        </a>
+       </li>
+       <li>
+        <a href="https://bangumi.tv/user/430090/doujin">
+         天窗
+        </a>
+       </li>
+      </ul>
+     </div>
+     <div class="navSubTabsWrapper">
+      <ul class="navSubTabs">
+       <li>
+        <a href="https://bangumi.tv/anime/list/430090/wish">
+         <span>
+          想看        (8)
+         </span>
+        </a>
+       </li>
+       <li>
+        <a class="focus" href="https://bangumi.tv/anime/list/430090/collect">
+         <span>
+          看过        (161)
+         </span>
+        </a>
+       </li>
+      </ul>
+     </div>
+    </div>
+   </div>
+   <div class="mainWrapper">
+    <div class="columns clearit">
+     <div class="column" id="columnSubjectBrowserA">
+      <div class="clearit" id="browserTools">
+       按
+       <a class="l" href="https://bangumi.tv/anime/list/430090/collect?orderby=rate">
+        评价
+       </a>
+       ·
+       <a class="l" href="https://bangumi.tv/anime/list/430090/collect?">
+        收藏时间
+       </a>
+       ·
+       <a class="l" href="https://bangumi.tv/anime/list/430090/collect?orderby=date">
+        发售日
+       </a>
+       ·
+       <a class="l" href="https://bangumi.tv/anime/list/430090/collect?orderby=title">
+        名称
+       </a>
+       排序
+       <ul class="browserTypeSelector" id="browserTypeSelector">
+        <li>
+         <a href="javascript:void(0);" id="list_selector">
+          <span>
+           精简
+          </span>
+         </a>
+        </li>
+        <li>
+         <a class="active" href="javascript:void(0);" id="full_selector">
+          &gt;
+          <span>
+           列表
+          </span>
+         </a>
+        </li>
+        <li>
+         <a href="javascript:void(0);" id="grid_selector">
+          &gt;
+          <span>
+           网格
+          </span>
+         </a>
+        </li>
+       </ul>
+      </div>
+      <ul class="browserFull" id="browserItemList">
+       <li class="item odd clearit" id="item_226750">
+        <a class="subjectCover cover ll" href="https://bangumi.tv/subject/226750">
+         <span class="image">
+          <img class="cover" src="https://lain.bgm.tv/pic/cover/s/29/40/226750_3fW9q.jpg"/>
+         </span>
+         <span class="overlay">
+         </span>
+        </a>
+        <div class="inner">
+         <h3>
+          <a class="l" href="https://bangumi.tv/subject/226750">
+           刀剑神域外传 Gun Gale Online
+          </a>
+          <small class="grey">
+           ソードアート・オンライン オルタナティブ ガンゲイル・オンライン
+          </small>
+         </h3>
+         <p class="info tip">
+          12话 /  2018年4月7日 / 迫井政行 / 時雨沢恵一 / 小堺能夫
+         </p>
+         <p class="collectInfo">
+          <span class="starstop-s">
+           <span class="starlight stars10">
+           </span>
+          </span>
+          <span class="tip_j">
+           2019-6-17
+          </span>
+          <span class="tip_i">
+           /
+          </span>
+          <span class="tip">
+           标签: 刀剑神域
+          </span>
+         </p>
+        </div>
+       </li>
+       <li class="item even clearit" id="item_148099">
+        <a class="subjectCover cover ll" href="https://bangumi.tv/subject/148099">
+         <span class="image">
+          <img class="cover" src="https://lain.bgm.tv/pic/cover/s/a7/db/148099_EPbSE.jpg"/>
+         </span>
+         <span class="overlay">
+         </span>
+        </a>
+        <div class="inner">
+         <h3>
+          <a class="l" href="https://bangumi.tv/subject/148099">
+           刀剑神域 序列之争
+          </a>
+          <small class="grey">
+           劇場版 ソードアート・オンライン -オーディナル・スケール-
+          </small>
+         </h3>
+         <p class="info tip">
+          1话 /  2017年2月18日 / 伊藤智彦 / 川原礫（「電撃文庫」刊） / 足立慎吾、副：鈴木豪
+         </p>
+         <p class="collectInfo">
+          <span class="starstop-s">
+           <span class="starlight stars10">
+           </span>
+          </span>
+          <span class="tip_j">
+           2019-6-17
+          </span>
+          <span class="tip_i">
+           /
+          </span>
+          <span class="tip">
+           标签: 刀剑神域
+          </span>
+         </p>
+        </div>
+       </li>
+       <li class="item odd clearit" id="item_92382">
+        <a class="subjectCover cover ll" href="https://bangumi.tv/subject/92382">
+         <span class="image">
+          <img class="cover" src="https://lain.bgm.tv/pic/cover/s/eb/9f/92382_zJ0gB.jpg"/>
+         </span>
+         <span class="overlay">
+         </span>
+        </a>
+        <div class="inner">
+         <h3>
+          <a class="l" href="https://bangumi.tv/subject/92382">
+           刀剑神域 第二季
+          </a>
+          <small class="grey">
+           ソードアート・オンラインII
+          </small>
+         </h3>
+         <p class="info tip">
+          24话 /  2014年7月5日 / 伊藤智彦 / 川原礫（「電撃文庫」刊） / 足立慎吾、山下祐（副）
+         </p>
+         <p class="collectInfo">
+          <span class="starstop-s">
+           <span class="starlight stars10">
+           </span>
+          </span>
+          <span class="tip_j">
+           2019-6-17
+          </span>
+          <span class="tip_i">
+           /
+          </span>
+          <span class="tip">
+           标签: 刀剑神域
+          </span>
+         </p>
+        </div>
+       </li>
+       <li class="item even clearit" id="item_84866">
+        <a class="subjectCover cover ll" href="https://bangumi.tv/subject/84866">
+         <span class="image">
+          <img class="cover" src="https://lain.bgm.tv/pic/cover/s/6e/53/84866_yQ6Kq.jpg"/>
+         </span>
+         <span class="overlay">
+         </span>
+        </a>
+        <div class="inner">
+         <h3>
+          <a class="l" href="https://bangumi.tv/subject/84866">
+           刀剑神域 Extra Edition
+          </a>
+          <small class="grey">
+           ソードアート・オンライン Extra Edition
+          </small>
+         </h3>
+         <p class="info tip">
+          1话 /  2013年12月31日 / 伊藤智彦 / 川原礫（「電撃文庫」刊） / 足立慎吾、川上哲也（副）
+         </p>
+         <p class="collectInfo">
+          <span class="starstop-s">
+           <span class="starlight stars10">
+           </span>
+          </span>
+          <span class="tip_j">
+           2019-6-17
+          </span>
+          <span class="tip_i">
+           /
+          </span>
+          <span class="tip">
+           标签: 刀剑神域
+          </span>
+         </p>
+        </div>
+       </li>
+       <li class="item odd clearit" id="item_23686">
+        <a class="subjectCover cover ll" href="https://bangumi.tv/subject/23686">
+         <span class="image">
+          <img class="cover" src="https://lain.bgm.tv/pic/cover/s/2e/c8/23686_e36x9.jpg"/>
+         </span>
+         <span class="overlay">
+         </span>
+        </a>
+        <div class="inner">
+         <h3>
+          <a class="l" href="https://bangumi.tv/subject/23686">
+           刀剑神域
+          </a>
+          <small class="grey">
+           ソードアート・オンライン
+          </small>
+         </h3>
+         <p class="info tip">
+          25话 /  2012年7月7日 / 伊藤智彦 / 川原礫（「電撃文庫」刊） / 足立慎吾、川上哲也（副）
+         </p>
+         <p class="collectInfo">
+          <span class="starstop-s">
+           <span class="starlight stars10">
+           </span>
+          </span>
+          <span class="tip_j">
+           2019-6-17
+          </span>
+          <span class="tip_i">
+           /
+          </span>
+          <span class="tip">
+           标签: 刀剑神域
+          </span>
+         </p>
+        </div>
+       </li>
+       <li class="item even clearit" id="item_106060">
+        <a class="subjectCover cover ll" href="https://bangumi.tv/subject/106060">
+         <span class="image">
+          <img class="cover" src="https://lain.bgm.tv/pic/cover/s/d6/c6/106060_4G8h4.jpg"/>
+         </span>
+         <span class="overlay">
+         </span>
+        </a>
+        <div class="inner">
+         <h3>
+          <a class="l" href="https://bangumi.tv/subject/106060">
+           剧场版 约会大作战 万由里裁决
+          </a>
+          <small class="grey">
+           劇場版 デート・ア・ライブ 万由里ジャッジメント
+          </small>
+         </h3>
+         <p class="info tip">
+          1话 /  2015年8月22日 / 元永慶太郎 / 橘公司 / 石野聡、渡辺浩二
+         </p>
+         <p class="collectInfo">
+          <span class="starstop-s">
+           <span class="starlight stars10">
+           </span>
+          </span>
+          <span class="tip_j">
+           2019-6-17
+          </span>
+          <span class="tip_i">
+           /
+          </span>
+          <span class="tip">
+           标签: 约会大作战
+          </span>
+         </p>
+        </div>
+       </li>
+       <li class="item odd clearit" id="item_98693">
+        <a class="subjectCover cover ll" href="https://bangumi.tv/subject/98693">
+         <span class="image">
+          <img class="cover" src="https://lain.bgm.tv/pic/cover/s/ca/82/98693_r0XB5.jpg"/>
+         </span>
+         <span class="overlay">
+         </span>
+        </a>
+        <div class="inner">
+         <h3>
+          <a class="l" href="https://bangumi.tv/subject/98693">
+           约会大作战 OAD
+          </a>
+          <small class="grey">
+           デート・ア・ライブ OAD
+          </small>
+         </h3>
+         <p class="info tip">
+          1话 /  2014年12月9日 / 元永慶太郎 / 橘公司 / 石野聡、副：相澤昌弘・高橋しんや
+         </p>
+         <p class="collectInfo">
+          <span class="starstop-s">
+           <span class="starlight stars10">
+           </span>
+          </span>
+          <span class="tip_j">
+           2019-6-17
+          </span>
+          <span class="tip_i">
+           /
+          </span>
+          <span class="tip">
+           标签: 约会大作战
+          </span>
+         </p>
+        </div>
+       </li>
+       <li class="item even clearit" id="item_76325">
+        <a class="subjectCover cover ll" href="https://bangumi.tv/subject/76325">
+         <span class="image">
+          <img class="cover" src="https://lain.bgm.tv/pic/cover/s/65/55/76325_8yJ4Y.jpg"/>
+         </span>
+         <span class="overlay">
+         </span>
+        </a>
+        <div class="inner">
+         <h3>
+          <a class="l" href="https://bangumi.tv/subject/76325">
+           约会大作战 第二季
+          </a>
+          <small class="grey">
+           デート・ア・ライブII
+          </small>
+         </h3>
+         <p class="info tip">
+          10话 /  2014年4月11日 / 元永慶太郎 / 橘公司 / 石野聡、副：相澤昌弘・高橋しんや
+         </p>
+         <p class="collectInfo">
+          <span class="starstop-s">
+           <span class="starlight stars10">
+           </span>
+          </span>
+          <span class="tip_j">
+           2019-6-17
+          </span>
+          <span class="tip_i">
+           /
+          </span>
+          <span class="tip">
+           标签: 约会大作战
+          </span>
+         </p>
+        </div>
+       </li>
+       <li class="item odd clearit" id="item_49131">
+        <a class="subjectCover cover ll" href="https://bangumi.tv/subject/49131">
+         <span class="image">
+          <img class="cover" src="https://lain.bgm.tv/pic/cover/s/99/08/49131_CIPjC.jpg"/>
+         </span>
+         <span class="overlay">
+         </span>
+        </a>
+        <div class="inner">
+         <h3>
+          <a class="l" href="https://bangumi.tv/subject/49131">
+           约会大作战
+          </a>
+          <small class="grey">
+           デート・ア・ライブ
+          </small>
+         </h3>
+         <p class="info tip">
+          12话 /  2013年4月5日 / 元永慶太郎 / 橘公司 / 石野聡
+         </p>
+         <p class="collectInfo">
+          <span class="starstop-s">
+           <span class="starlight stars10">
+           </span>
+          </span>
+          <span class="tip_j">
+           2019-6-17
+          </span>
+          <span class="tip_i">
+           /
+          </span>
+          <span class="tip">
+           标签: 约会大作战
+          </span>
+         </p>
+        </div>
+       </li>
+       <li class="item even clearit" id="item_7157">
+        <a class="subjectCover cover ll" href="https://bangumi.tv/subject/7157">
+         <span class="image">
+          <img class="cover" src="https://lain.bgm.tv/pic/cover/s/6e/01/7157_QV8Rz.jpg"/>
+         </span>
+         <span class="overlay">
+         </span>
+        </a>
+        <div class="inner">
+         <h3>
+          <a class="l" href="https://bangumi.tv/subject/7157">
+           缘之空
+          </a>
+          <small class="grey">
+           ヨスガノソラ
+          </small>
+         </h3>
+         <p class="info tip">
+          12话 /  2010年10月4日 / 高橋丈夫 / Sphere / 神本兼利
+         </p>
+         <p class="collectInfo">
+          <span class="starstop-s">
+           <span class="starlight stars10">
+           </span>
+          </span>
+          <span class="tip_j">
+           2019-6-17
+          </span>
+          <span class="tip_i">
+           /
+          </span>
+          <span class="tip">
+           标签: 缘之空
+          </span>
+         </p>
+        </div>
+       </li>
+       <li class="item odd clearit" id="item_18480">
+        <a class="subjectCover cover ll" href="https://bangumi.tv/subject/18480">
+         <span class="image">
+          <img class="cover" src="https://lain.bgm.tv/pic/cover/s/d2/57/18480_ba8FP.jpg"/>
+         </span>
+         <span class="overlay">
+         </span>
+        </a>
+        <div class="inner">
+         <h3>
+          <a class="l" href="https://bangumi.tv/subject/18480">
+           死神剧场版 地狱篇
+          </a>
+          <small class="grey">
+           劇場版BLEACH 地獄篇
+          </small>
+         </h3>
+         <p class="info tip">
+          1话 /  2010年12月4日
+         </p>
+         <p class="collectInfo">
+          <span class="starstop-s">
+           <span class="starlight stars10">
+           </span>
+          </span>
+          <span class="tip_j">
+           2019-5-7
+          </span>
+          <span class="tip_i">
+           /
+          </span>
+          <span class="tip">
+           标签: 死神
+          </span>
+         </p>
+        </div>
+       </li>
+       <li class="item even clearit" id="item_2875">
+        <a class="subjectCover cover ll" href="https://bangumi.tv/subject/2875">
+         <span class="image">
+          <img class="cover" src="https://lain.bgm.tv/pic/cover/s/4f/1f/2875_T3tOB.jpg"/>
+         </span>
+         <span class="overlay">
+         </span>
+        </a>
+        <div class="inner">
+         <h3>
+          <a class="l" href="https://bangumi.tv/subject/2875">
+           死神剧场版 消逝于黑暗中 呼唤着你的名字
+          </a>
+          <small class="grey">
+           劇場版BLEACH Fade to Black 君の名を呼ぶ
+          </small>
+         </h3>
+         <p class="info tip">
+          1话 /  2008年12月13日 / 阿部記之 / 工藤昌史
+         </p>
+         <p class="collectInfo">
+          <span class="starstop-s">
+           <span class="starlight stars10">
+           </span>
+          </span>
+          <span class="tip_j">
+           2019-5-7
+          </span>
+          <span class="tip_i">
+           /
+          </span>
+          <span class="tip">
+           标签: 死神
+          </span>
+         </p>
+        </div>
+       </li>
+       <li class="item odd clearit" id="item_1924">
+        <a class="subjectCover cover ll" href="https://bangumi.tv/subject/1924">
+         <span class="image">
+          <img class="cover" src="https://lain.bgm.tv/pic/cover/s/b1/39/1924_2Z25o.jpg"/>
+         </span>
+         <span class="overlay">
+         </span>
+        </a>
+        <div class="inner">
+         <h3>
+          <a class="l" href="https://bangumi.tv/subject/1924">
+           死神剧场版 钻石星尘的反叛 另一个冰轮丸
+          </a>
+          <small class="grey">
+           劇場版BLEACH The DiamondDust Rebellion もう一つの氷輪丸
+          </small>
+         </h3>
+         <p class="info tip">
+          1话 /  2007年12月22日 / 阿部記之 / 久保帯人 / 工藤昌史
+         </p>
+         <p class="collectInfo">
+          <span class="starstop-s">
+           <span class="starlight stars10">
+           </span>
+          </span>
+          <span class="tip_j">
+           2019-5-7
+          </span>
+          <span class="tip_i">
+           /
+          </span>
+          <span class="tip">
+           标签: 死神
+          </span>
+         </p>
+        </div>
+       </li>
+       <li class="item even clearit" id="item_1925">
+        <a class="subjectCover cover ll" href="https://bangumi.tv/subject/1925">
+         <span class="image">
+          <img class="cover" src="https://lain.bgm.tv/pic/cover/s/09/50/1925_Y637U.jpg"/>
+         </span>
+         <span class="overlay">
+         </span>
+        </a>
+        <div class="inner">
+         <h3>
+          <a class="l" href="https://bangumi.tv/subject/1925">
+           死神剧场版 无人的回忆
+          </a>
+          <small class="grey">
+           劇場版BLEACH MEMORIES OF NOBODY
+          </small>
+         </h3>
+         <p class="info tip">
+          1话 /  2006年12月16日
+         </p>
+         <p class="collectInfo">
+          <span class="starstop-s">
+           <span class="starlight stars10">
+           </span>
+          </span>
+          <span class="tip_j">
+           2019-5-7
+          </span>
+          <span class="tip_i">
+           /
+          </span>
+          <span class="tip">
+           标签: 死神
+          </span>
+         </p>
+        </div>
+       </li>
+       <li class="item odd clearit" id="item_133680">
+        <a class="subjectCover cover ll" href="https://bangumi.tv/subject/133680">
+         <span class="image">
+          <img class="cover" src="https://lain.bgm.tv/pic/cover/s/77/fd/133680_gl9iS.jpg"/>
+         </span>
+         <span class="overlay">
+         </span>
+        </a>
+        <div class="inner">
+         <h3>
+          <a class="l" href="https://bangumi.tv/subject/133680">
+           死神 被封印的狂乱之剑
+          </a>
+          <small class="grey">
+           BLEACH The sealed sword frenzy
+          </small>
+         </h3>
+         <p class="info tip">
+          1话 /  2005-09-24
+         </p>
+         <p class="collectInfo">
+          <span class="starstop-s">
+           <span class="starlight stars8">
+           </span>
+          </span>
+          <span class="tip_j">
+           2019-5-7
+          </span>
+          <span class="tip_i">
+           /
+          </span>
+          <span class="tip">
+           标签: 死神
+          </span>
+         </p>
+        </div>
+       </li>
+       <li class="item even clearit" id="item_133679">
+        <a class="subjectCover cover ll" href="https://bangumi.tv/subject/133679">
+         <span class="image">
+          <img class="cover" src="https://lain.bgm.tv/pic/cover/s/68/51/133679_7gU7F.jpg"/>
+         </span>
+         <span class="overlay">
+         </span>
+        </a>
+        <div class="inner">
+         <h3>
+          <a class="l" href="https://bangumi.tv/subject/133679">
+           死神 雨中的回忆
+          </a>
+          <small class="grey">
+           BLEACH Memories in the Rain
+          </small>
+         </h3>
+         <p class="info tip">
+          1话 /  2003-12-20
+         </p>
+         <p class="collectInfo">
+          <span class="starstop-s">
+           <span class="starlight stars8">
+           </span>
+          </span>
+          <span class="tip_j">
+           2019-5-7
+          </span>
+          <span class="tip_i">
+           /
+          </span>
+          <span class="tip">
+           标签: 死神
+          </span>
+         </p>
+        </div>
+       </li>
+       <li class="item odd clearit" id="item_1600">
+        <a class="subjectCover cover ll" href="https://bangumi.tv/subject/1600">
+         <span class="image">
+          <img class="cover" src="https://lain.bgm.tv/pic/cover/s/9e/98/1600_dLcNL.jpg"/>
+         </span>
+         <span class="overlay">
+         </span>
+        </a>
+        <div class="inner">
+         <h3>
+          <a class="l" href="https://bangumi.tv/subject/1600">
+           死神
+          </a>
+          <small class="grey">
+           BLEACH
+          </small>
+         </h3>
+         <p class="info tip">
+          366话 /  2004年10月5日 / 阿部記之
+         </p>
+         <p class="collectInfo">
+          <span class="starstop-s">
+           <span class="starlight stars10">
+           </span>
+          </span>
+          <span class="tip_j">
+           2019-5-7
+          </span>
+          <span class="tip_i">
+           /
+          </span>
+          <span class="tip">
+           标签: 死神
+          </span>
+         </p>
+        </div>
+       </li>
+      </ul>
+      <div id="multipage">
+       <div class="page_inner">
+        <a class="p" href="https://bangumi.tv/anime/list/430090/collect?page=6">
+         ‹‹
+        </a>
+        <a class="p" href="https://bangumi.tv/anime/list/430090/collect?page=1">
+         1
+        </a>
+        <a class="p" href="https://bangumi.tv/anime/list/430090/collect?page=2">
+         2
+        </a>
+        <a class="p" href="https://bangumi.tv/anime/list/430090/collect?page=3">
+         3
+        </a>
+        <a class="p" href="https://bangumi.tv/anime/list/430090/collect?page=4">
+         4
+        </a>
+        <a class="p" href="https://bangumi.tv/anime/list/430090/collect?page=5">
+         5
+        </a>
+        <a class="p" href="https://bangumi.tv/anime/list/430090/collect?page=6">
+         6
+        </a>
+        <strong class="p_cur">
+         7
+        </strong>
+       </div>
+      </div>
+     </div>
+     <div class="column" id="columnSubjectBrowserB">
+      <div class="SimpleSidePanel" style="width:190px;">
+       <h2>
+        看过的标签
+       </h2>
+       <ul class="tagList" id="userTagList">
+        <li>
+         <a class="l" href="https://bangumi.tv/anime/list/430090/collect?tag=%E8%BF%9B%E5%87%BB%E7%9A%84%E5%B7%A8%E4%BA%BA">
+          <small>
+           13
+          </small>
+          进击的巨人
+         </a>
+        </li>
+        <li>
+         <a class="l" href="https://bangumi.tv/anime/list/430090/collect?tag=%E5%88%80%E5%89%91%E7%A5%9E%E5%9F%9F">
+          <small>
+           10
+          </small>
+          刀剑神域
+         </a>
+        </li>
+        <li>
+         <a class="l" href="https://bangumi.tv/anime/list/430090/collect?tag=OVERLORD">
+          <small>
+           10
+          </small>
+          OVERLORD
+         </a>
+        </li>
+        <li>
+         <a class="l" href="https://bangumi.tv/anime/list/430090/collect?tag=%E4%B8%AD%E4%BA%8C%E7%97%85%E4%B9%9F%E8%A6%81%E8%B0%88%E6%81%8B%E7%88%B1">
+          <small>
+           7
+          </small>
+          中二病也要谈恋爱
+         </a>
+        </li>
+        <li>
+         <a class="l" href="https://bangumi.tv/anime/list/430090/collect?tag=%E6%AD%BB%E7%A5%9E">
+          <small>
+           7
+          </small>
+          死神
+         </a>
+        </li>
+        <li>
+         <a class="l" href="https://bangumi.tv/anime/list/430090/collect?tag=%E9%A3%9F%E6%88%9F%E4%B9%8B%E7%81%B5">
+          <small>
+           7
+          </small>
+          食戟之灵
+         </a>
+        </li>
+        <li>
+         <a class="l" href="https://bangumi.tv/anime/list/430090/collect?tag=%E4%B8%9C%E4%BA%AC%E5%96%B0%E7%A7%8D">
+          <small>
+           6
+          </small>
+          东京喰种
+         </a>
+        </li>
+        <li>
+         <a class="l" href="https://bangumi.tv/anime/list/430090/collect?tag=%E7%BA%A6%E4%BC%9A%E5%A4%A7%E4%BD%9C%E6%88%98">
+          <small>
+           5
+          </small>
+          约会大作战
+         </a>
+        </li>
+        <li>
+         <a class="l" href="https://bangumi.tv/anime/list/430090/collect?tag=Clannad">
+          <small>
+           5
+          </small>
+          Clannad
+         </a>
+        </li>
+        <li>
+         <a class="l" href="https://bangumi.tv/anime/list/430090/collect?tag=%E9%AD%94%E6%B3%95%E7%A6%81%E4%B9%A6%E7%9B%AE%E5%BD%95">
+          <small>
+           5
+          </small>
+          魔法禁书目录
+         </a>
+        </li>
+        <li>
+         <a class="l" href="https://bangumi.tv/anime/list/430090/collect?tag=%E5%BC%B9%E4%B8%B8%E8%AE%BA%E7%A0%B4">
+          <small>
+           5
+          </small>
+          弹丸论破
+         </a>
+        </li>
+        <li>
+         <a class="l" href="https://bangumi.tv/anime/list/430090/collect?tag=%E5%85%A8%E8%81%8C%E9%AB%98%E6%89%8B">
+          <small>
+           5
+          </small>
+          全职高手
+         </a>
+        </li>
+        <li>
+         <a class="l" href="https://bangumi.tv/anime/list/430090/collect?tag=%E5%91%BD%E8%BF%90%E7%9F%B3%E4%B9%8B%E9%97%A8">
+          <small>
+           4
+          </small>
+          命运石之门
+         </a>
+        </li>
+        <li>
+         <a class="l" href="https://bangumi.tv/anime/list/430090/collect?tag=%E5%A2%83%E7%95%8C%E7%9A%84%E5%BD%BC%E6%96%B9">
+          <small>
+           4
+          </small>
+          境界的彼方
+         </a>
+        </li>
+        <li>
+         <a class="l" href="https://bangumi.tv/anime/list/430090/collect?tag=%E9%92%A2%E4%B9%8B%E7%82%BC%E9%87%91%E6%9C%AF%E5%B8%88">
+          <small>
+           4
+          </small>
+          钢之炼金术师
+         </a>
+        </li>
+        <li>
+         <a class="l" href="https://bangumi.tv/anime/list/430090/collect?tag=%E5%8A%A0%E9%80%9F%E4%B8%96%E7%95%8C">
+          <small>
+           4
+          </small>
+          加速世界
+         </a>
+        </li>
+        <li>
+         <a class="l" href="https://bangumi.tv/anime/list/430090/collect?tag=%E7%A7%91%E5%AD%A6%E8%B6%85%E7%94%B5%E7%A3%81%E7%82%AE">
+          <small>
+           4
+          </small>
+          科学超电磁炮
+         </a>
+        </li>
+        <li>
+         <a class="l" href="https://bangumi.tv/anime/list/430090/collect?tag=%E6%AD%BB%E4%BA%A1%E7%AC%94%E8%AE%B0">
+          <small>
+           3
+          </small>
+          死亡笔记
+         </a>
+        </li>
+        <li>
+         <a class="l" href="https://bangumi.tv/anime/list/430090/collect?tag=%E5%B9%B2%E7%89%A9%E5%A6%B9%E5%B0%8F%E5%9F%8B">
+          <small>
+           3
+          </small>
+          干物妹小埋
+         </a>
+        </li>
+        <li>
+         <a class="l" href="https://bangumi.tv/anime/list/430090/collect?tag=%E7%BD%AA%E6%81%B6%E7%8E%8B%E5%86%A0">
+          <small>
+           3
+          </small>
+          罪恶王冠
+         </a>
+        </li>
+        <li>
+         <a class="l" href="https://bangumi.tv/anime/list/430090/collect?tag=%E6%9C%AA%E6%9D%A5%E6%97%A5%E8%AE%B0">
+          <small>
+           3
+          </small>
+          未来日记
+         </a>
+        </li>
+        <li>
+         <a class="l" href="https://bangumi.tv/anime/list/430090/collect?tag=ANOTHER">
+          <small>
+           2
+          </small>
+          ANOTHER
+         </a>
+        </li>
+        <li>
+         <a class="l" href="https://bangumi.tv/anime/list/430090/collect?tag=%E5%9B%9B%E6%9C%88%E6%98%AF%E4%BD%A0%E7%9A%84%E8%B0%8E%E8%A8%80">
+          <small>
+           2
+          </small>
+          四月是你的谎言
+         </a>
+        </li>
+        <li>
+         <a class="l" href="https://bangumi.tv/anime/list/430090/collect?tag=%E7%94%B2%E9%93%81%E5%9F%8E%E7%9A%84%E5%8D%A1%E5%B7%B4%E5%86%85%E7%91%9E">
+          <small>
+           2
+          </small>
+          甲铁城的卡巴内瑞
+         </a>
+        </li>
+        <li>
+         <a class="l" href="https://bangumi.tv/anime/list/430090/collect?tag=%E5%B7%A7%E5%85%8B%E5%8A%9B%E4%B8%8E%E9%A6%99%E5%AD%90%E5%85%B0">
+          <small>
+           2
+          </small>
+          巧克力与香子兰
+         </a>
+        </li>
+        <li>
+         <a class="l" href="https://bangumi.tv/anime/list/430090/collect?tag=%E9%AC%BC%E7%81%AD%E4%B9%8B%E5%88%83">
+          <small>
+           2
+          </small>
+          鬼灭之刃
+         </a>
+        </li>
+        <li>
+         <a class="l" href="https://bangumi.tv/anime/list/430090/collect?tag=%E7%B4%AB%E7%BD%97%E5%85%B0%E6%B0%B8%E6%81%92%E8%8A%B1%E5%9B%AD">
+          <small>
+           2
+          </small>
+          紫罗兰永恒花园
+         </a>
+        </li>
+        <li>
+         <a class="l" href="https://bangumi.tv/anime/list/430090/collect?tag=ALDNOAH.ZERO">
+          <small>
+           2
+          </small>
+          ALDNOAH.ZERO
+         </a>
+        </li>
+        <li>
+         <a class="l" href="https://bangumi.tv/anime/list/430090/collect?tag=%E6%96%A9%E8%B5%A4%E7%BA%A2%E4%B9%8B%E7%9E%B3">
+          <small>
+           2
+          </small>
+          斩赤红之瞳
+         </a>
+        </li>
+        <li>
+         <a class="l" href="https://bangumi.tv/anime/list/430090/collect?tag=%E9%BB%91%E5%B2%A9%E5%B0%84%E6%89%8B">
+          <small>
+           2
+          </small>
+          黑岩射手
+         </a>
+        </li>
+        <li>
+         <a class="l" href="https://bangumi.tv/anime/list/430090/collect?tag=%E6%B8%B8%E6%88%8F%E4%BA%BA%E7%94%9F">
+          <small>
+           2
+          </small>
+          游戏人生
+         </a>
+        </li>
+        <li>
+         <a class="l" href="https://bangumi.tv/anime/list/430090/collect?tag=%E5%86%B0%E8%8F%93">
+          <small>
+           2
+          </small>
+          冰菓
+         </a>
+        </li>
+        <li>
+         <a class="l" href="https://bangumi.tv/anime/list/430090/collect?tag=%E6%88%91%E7%9A%84%E5%A6%B9%E5%A6%B9%E5%93%AA%E6%9C%89%E8%BF%99%E4%B9%88%E5%8F%AF%E7%88%B1">
+          <small>
+           2
+          </small>
+          我的妹妹哪有这么可爱
+         </a>
+        </li>
+        <li>
+         <a class="l" href="https://bangumi.tv/anime/list/430090/collect?tag=%E6%9C%AA%E9%97%BB%E8%8A%B1%E5%90%8D">
+          <small>
+           2
+          </small>
+          未闻花名
+         </a>
+        </li>
+        <li>
+         <a class="l" href="https://bangumi.tv/anime/list/430090/collect?tag=%E5%A4%A9%E6%B0%94%E4%B9%8B%E5%AD%90">
+          <small>
+           1
+          </small>
+          天气之子
+         </a>
+        </li>
+        <li>
+         <a class="l" href="https://bangumi.tv/anime/list/430090/collect?tag=%E5%9B%9E%E5%A4%8D%E6%9C%AF%E5%A3%AB%E7%9A%84%E9%87%8D%E6%9D%A5%E4%BA%BA%E7%94%9F">
+          <small>
+           1
+          </small>
+          回复术士的重来人生
+         </a>
+        </li>
+        <li>
+         <a class="l" href="https://bangumi.tv/anime/list/430090/collect?tag=%E7%A2%A7%E8%93%9D%E8%88%AA%E7%BA%BF">
+          <small>
+           1
+          </small>
+          碧蓝航线
+         </a>
+        </li>
+        <li>
+         <a class="l" href="https://bangumi.tv/anime/list/430090/collect?tag=AngleBeats">
+          <small>
+           1
+          </small>
+          AngleBeats
+         </a>
+        </li>
+        <li>
+         <a class="l" href="https://bangumi.tv/anime/list/430090/collect?tag=%E6%9F%90%E7%A7%91%E5%AD%A6%E7%9A%84%E4%B8%80%E6%96%B9%E9%80%9A%E8%A1%8C">
+          <small>
+           1
+          </small>
+          某科学的一方通行
+         </a>
+        </li>
+        <li>
+         <a class="l" href="https://bangumi.tv/anime/list/430090/collect?tag=AngelBeats">
+          <small>
+           1
+          </small>
+          AngelBeats
+         </a>
+        </li>
+        <li>
+         <a class="l" href="https://bangumi.tv/anime/list/430090/collect?tag=%E7%83%9F%E8%8A%B1">
+          <small>
+           1
+          </small>
+          烟花
+         </a>
+        </li>
+        <li>
+         <a class="l" href="https://bangumi.tv/anime/list/430090/collect?tag=DARLING%E3%80%80in%E3%80%80the%E3%80%80FRANXX">
+          <small>
+           1
+          </small>
+          DARLING　in　the　FRANXX
+         </a>
+        </li>
+        <li>
+         <a class="l" href="https://bangumi.tv/anime/list/430090/collect?tag=%E7%BC%98%E4%B9%8B%E7%A9%BA">
+          <small>
+           1
+          </small>
+          缘之空
+         </a>
+        </li>
+        <li>
+         <a class="l" href="https://bangumi.tv/anime/list/430090/collect?tag=%E6%9C%BA%E5%B7%A7%E5%B0%91%E5%A5%B3%E4%B8%8D%E4%BC%9A%E5%8F%97%E4%BC%A4">
+          <small>
+           1
+          </small>
+          机巧少女不会受伤
+         </a>
+        </li>
+        <li>
+         <a class="l" href="https://bangumi.tv/anime/list/430090/collect?tag=%E5%8F%AF%E5%A1%91%E6%80%A7%E8%AE%B0%E5%BF%86">
+          <small>
+           1
+          </small>
+          可塑性记忆
+         </a>
+        </li>
+        <li>
+         <a class="l" href="https://bangumi.tv/anime/list/430090/collect?tag=%E5%AF%84%E7%94%9F%E5%85%BD">
+          <small>
+           1
+          </small>
+          寄生兽
+         </a>
+        </li>
+        <li>
+         <a class="l" href="https://bangumi.tv/anime/list/430090/collect?tag=Charlotte">
+          <small>
+           1
+          </small>
+          Charlotte
+         </a>
+        </li>
+        <li>
+         <a class="l" href="https://bangumi.tv/anime/list/430090/collect?tag=%E5%BF%83%E7%81%B5%E6%83%B3%E8%A6%81%E5%A4%A7%E5%A3%B0%E5%91%BC%E5%96%8A">
+          <small>
+           1
+          </small>
+          心灵想要大声呼喊
+         </a>
+        </li>
+        <li>
+         <a class="l" href="https://bangumi.tv/anime/list/430090/collect?tag=%E5%A4%A7%E9%B1%BC%E6%B5%B7%E6%A3%A0">
+          <small>
+           1
+          </small>
+          大鱼海棠
+         </a>
+        </li>
+        <li>
+         <a class="l" href="https://bangumi.tv/anime/list/430090/collect?tag=%E5%9C%A8%E4%B8%8B%E5%9D%82%E6%9C%AC%E6%9C%89%E4%BD%95%E8%B4%B5%E5%B9%B2">
+          <small>
+           1
+          </small>
+          在下坂本有何贵干
+         </a>
+        </li>
+        <li>
+         <a class="l" href="https://bangumi.tv/anime/list/430090/collect?tag=%E8%8B%B1%E9%9B%84%E8%81%94%E7%9B%9F">
+          <small>
+           1
+          </small>
+          英雄联盟
+         </a>
+        </li>
+        <li>
+         <a class="l" href="https://bangumi.tv/anime/list/430090/collect?tag=%E4%BD%A0%E7%9A%84%E5%90%8D%E5%AD%97">
+          <small>
+           1
+          </small>
+          你的名字
+         </a>
+        </li>
+       </ul>
+      </div>
+      <div class="menu_inner">
+       <span class="tip">
+        本页永久链接:
+       </span>
+       <br/>
+       <a class="l" href="http://bangumi.tv/anime/list/430090/collect">
+        http://bangumi.tv/anime/list/430090/collect
+       </a>
+      </div>
+     </div>
+    </div>
+    <div id="footer">
+     <ul class="clearit" id="footerLinks">
+      <li class="first">
+       <dl>
+        <dt>
+         关于我们
+        </dt>
+        <dd>
+         <a href="https://bangumi.tv/about">
+          关于我们
+         </a>
+        </dd>
+        <dd>
+         <a href="https://bangumi.tv/about/guideline">
+          社区指导原则
+         </a>
+         <dd>
+          <dd>
+           <a href="https://bangumi.tv/about/copyright">
+            版权声明
+           </a>
+           <dd>
+            <dd>
+             <a href="https://bangumi.tv/about/link2us">
+              链接我们
+             </a>
+             <dd>
+             </dd>
+            </dd>
+           </dd>
+          </dd>
+         </dd>
+        </dd>
+       </dl>
+      </li>
+      <li>
+       <dl>
+        <dt>
+         获取帮助
+        </dt>
+        <dd>
+         <a href="https://bangumi.tv/help/bbcode">
+          BBCode
+         </a>
+        </dd>
+        <dd>
+         <a href="https://bangumi.tv/group/forum">
+          站务论坛
+         </a>
+        </dd>
+        <dd>
+         <a href="https://bangumi.tv/group/dev">
+          番组开发
+         </a>
+        </dd>
+        <dd>
+         <a href="https://bangumi.tv/group/issues">
+          BUG追踪
+         </a>
+        </dd>
+        <dd>
+         <a href="https://bangumi.tv/group/doujin">
+          天窗站务
+         </a>
+        </dd>
+       </dl>
+      </li>
+      <li>
+       <dl>
+        <dt>
+         特别推荐
+        </dt>
+        <dd>
+         <a href="https://bangumi.tv/award/2020">
+          年鉴 2020
+         </a>
+         |
+         <a href="https://bangumi.tv/award/2019">
+          19
+         </a>
+         |
+         <a href="https://bangumi.tv/award/2018">
+          18
+         </a>
+         |
+         <a href="https://bangumi.tv/award/2017">
+          17
+         </a>
+         |
+         <a href="https://bangumi.tv/award/2016">
+          16
+         </a>
+         |
+         <a href="https://bangumi.tv/award/2015">
+          15
+         </a>
+         |
+         <a href="https://bangumi.tv/award/2014">
+          14
+         </a>
+         |
+         <a href="https://bangumi.tv/award/2013">
+          13
+         </a>
+         |
+         <a href="https://bangumi.tv/award/2012">
+          12
+         </a>
+         <br/>
+         |
+         <a href="https://bangumi.tv/award/2011">
+          11
+         </a>
+         |
+         <a href="https://bangumi.tv/award/2010">
+          10
+         </a>
+        </dd>
+        <dd>
+         <a href="https://bangumi.tv/group/wiki">
+          番組WIKI計画
+         </a>
+        </dd>
+        <dd>
+         <a href="https://bangumi.tv/onair">
+          onAir 客户端
+         </a>
+        </dd>
+        <dd>
+         <a href="https://bangumi.tv/tokei">
+          etokei 绘时计
+         </a>
+        </dd>
+       </dl>
+      </li>
+      <li class="last">
+       <dl>
+        <dt>
+         更多
+        </dt>
+        <dd>
+         <a href="https://bangumi.tv/dev/app">
+          开发者平台
+         </a>
+        </dd>
+        <dd>
+         <a href="https://bangumi.tv/index">
+          目录
+         </a>
+        </dd>
+        <dd>
+         <a href="https://bangumi.tv/wiki">
+          维基人
+         </a>
+        </dd>
+        <dd>
+         <a href="https://bangumi.tv/magi">
+          MAGI 问答
+         </a>
+        </dd>
+        <dd>
+         <a href="https://bangumi.tv/goodies">
+          周边
+         </a>
+        </dd>
+        <dd>
+         <a href="https://bangumi.tv/dollars">
+          Dollars
+         </a>
+        </dd>
+       </dl>
+      </li>
+     </ul>
+     <div class="copyright">
+      <small class="grey">
+       © 2008-2021 Bangumi (a.k.a.Chobits), some rights reserved | r336
+      </small>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="homeBg">
+  </div>
+  <div id="dock">
+   <div class="content">
+    <ul class="clearit">
+     <li class="first">
+      <a href="https://bangumi.tv/login">
+       登录
+      </a>
+      |
+      <a href="https://bangumi.tv/signup">
+       注册
+      </a>
+     </li>
+     <li class="last">
+      <a href="javascript:void(0);" id="toggleTheme">
+      </a>
+     </li>
+     <li class="last">
+      <a href="javascript:void(0);" id="showrobot">
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+  <div id="robot" style="display:none;">
+   <div id="ukagaka_shell">
+    <div class="ui_10 shell_1">
+     <div id="ukagaka_voice">
+     </div>
+     <div class="ukagaka_balloon_pink" id="robot_balloon">
+      <div class="inner">
+       <div class="speech" id="robot_speech">
+        没
+        <a class="nav" href="https://bangumi.tv/signup">
+         注册
+        </a>
+        时我很沉默
+       </div>
+       <div class="speech" id="robot_speech_js">
+       </div>
+      </div>
+      <div class="ukagaka_balloon_pink_bottom">
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <script src="https://bangumi.tv/min/g=js?r336" type="text/javascript">
+  </script>
+  <script type="text/javascript">
+   var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-4049707-6']);
+    _gaq.push(['_setDomainName', 'none']);
+    _gaq.push(['_setAllowLinker', true]);
+    _gaq.push(['_trackPageview']);
+    
+    (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+  <script type="text/javascript">
+   window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"25c6cbfd04","applicationID":"162207108","transactionName":"MVYENUNWWBBTBhdcVggcMxNYGEQMRxEGRxcWWxY=","queueTime":0,"applicationTime":16,"atts":"HREHQwtMSx4=","errorBeacon":"bam.nr-data.net","agent":""}
+  </script>
+ </body>
+</html>
+<script>
+ $(function() {
+$('#expandTags').click(function() {
+$('#userTagList li').show();
+$(this).remove();
+});
+});
+</script>
